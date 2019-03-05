@@ -12,9 +12,9 @@ Person::Person()   // initializer
 	hoursWorked = 0.00;
 }  
 
-void Person::setLastName(string _last)
+void Person::setLastName(string lastN)
 {
-	lastName = _last;
+	lastName = lastN;
 }
 
 string Person::getLastName()
@@ -22,9 +22,9 @@ string Person::getLastName()
 	return lastName;
 }
 
-void Person::setFirstName(string _first)
+void Person::setFirstName(string firstN)
 {
-	firstName = _first;
+	firstName = firstN;
 }
 
 string Person::getFirstName() 
@@ -32,9 +32,9 @@ string Person::getFirstName()
 	return firstName;
 }
 
-void Person::setPayRate(float _rate)
+void Person::setPayRate(float payR)
 {
-	payRate = _rate;
+	payRate = payR;
 }
 
 float Person::getPayRate()
@@ -42,9 +42,9 @@ float Person::getPayRate()
 	return payRate;
 }
 
-void Person::setHoursWorked(float _hours)
+void Person::setHoursWorked(float hoursW)
 {
-	hoursWorked = _hours;
+	hoursWorked = hoursW;
 }
 
 float Person::getHoursWorked()   // Person:: calls the public methods(functions) in person class.
@@ -55,10 +55,10 @@ float Person::getHoursWorked()   // Person:: calls the public methods(functions)
 
 float Person::totalPay()
 {
-	return  0.00;
+	return  getHoursWorked() * getPayRate();
 }
 	
 string Person::fullName()
 {
-	return "";
+	return firstName + lastName;
 }
