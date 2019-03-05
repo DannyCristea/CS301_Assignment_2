@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -28,27 +29,23 @@ void readData(Person arr[], int size)
 		ifstream inData;			// using the ifstream op
 		inData.open("input.txt");   // opens input.txt
 
+		inData >> fname;
 		while (!inData.eof())	 	// while not end of file (eof)
 		{
-			count++;
-			for (int i = 0; i < count; i++)
-				{
-					getline(inData, dataFile);
-					
-					inData >> fname;
-					inData >> lname;
-					inData >> pay;
-					inData >> hours;
-					name = fname + " " + lname;
+				//inData >> fname;
+				inData >> lname;
+				inData >> pay;
+				inData >> hours;
+				name = fname + " " + lname;
 		
-					arr[i].setFirstName(fname);
-					arr[i].setLastName(lname);
-					arr[i].setPayRate(pay);
-					arr[i].setHoursWorked(hours);
+				arr[count].setFirstName(fname);
+				arr[count].setLastName(lname);
+				arr[count].setPayRate(pay);
+				arr[count].setHoursWorked(hours);
 					
-					cout << name << " " << pay << " " << hours << endl;
-			
-			 	}			
+				cout << name << " " << pay * hours << " " << endl;
+				inData >> fname;
+				count++;		
 		}
 		inData.close();		
 	}
