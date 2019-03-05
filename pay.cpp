@@ -58,7 +58,7 @@ void writeData(Person arr[], int size)  // should call fullname() and totalpay()
 
 	for (int i = 0; i < size; i++)
 	{
-		outData << arr[i].fullName() << " " << arr[i].totalPay() << endl;
+		outData << arr[i].fullName() << " " << fixed << setprecision(2) << arr[i].totalPay() << endl;
 	}
 	outData.close();
 }
