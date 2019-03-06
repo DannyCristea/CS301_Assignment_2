@@ -6,21 +6,23 @@
 
 using namespace std;
 
-void readData(Person arr[], int size);   // fucntion declaration
+int readData(Person arr[], int size);   // fucntion declaration
 void writeData(Person arr[], int size);  // function declaration
+
 
 int main()
 {
 	int size = 20;
 	Person arr[size];     // arr of obejct type Person
 
-	readData(arr, size);   // calling the readData function.
-	writeData(arr, size);  // calling the writeData function.
+	size = readData(arr, size);  // calling the readData function.
+	writeData(arr, size); // calling the writeData function.
+	
 	
 	return 0;
 }
 
-void readData(Person arr[], int size)
+int readData(Person arr[], int size)
 	{
 		string fname, lname, name, dataFile;
 		float pay, hours;
@@ -32,7 +34,6 @@ void readData(Person arr[], int size)
 		inData >> fname;
 		while (!inData.eof())	 	// while not end of file (eof)
 		{
-				//inData >> fname;
 				inData >> lname;
 				inData >> pay;
 				inData >> hours;
@@ -43,15 +44,16 @@ void readData(Person arr[], int size)
 				arr[count].setPayRate(pay);
 				arr[count].setHoursWorked(hours);
 					
-				cout << name << " " << pay * hours << " " << endl;
+				//cout << name << " " << pay * hours << " " << endl;
 				inData >> fname;
 				count++;		
 		}
 		inData.close();		
+		return count;
 	}
 	
 
-void writeData(Person arr[], int size)  // should call fullname() and totalpay()
+void writeData(Person arr[], int size)  
 {
 	ofstream outData;
 	outData.open("output.txt");

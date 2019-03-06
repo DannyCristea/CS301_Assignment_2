@@ -12,25 +12,25 @@ private:
 	string firstName;
 	float  payRate;
 	float  hoursWorked;
-public:
-	
+public:     
+				      // inline is used due to compiler/linker compatibility i had. 
 	inline Person();  // initializer 
 	
 	void inline setLastName(string lastName);
 	
-	string inline getLastName();      // completed in person.cpp
+	string inline getLastName();      
 	
 	void inline setFirstName(string _first);
 	
-	string inline getFirstName();     // completed in person.cpp  
+	string inline getFirstName();    
 	
 	void inline setPayRate(float _rate);
 	
-	float inline getPayRate();       // completed in person.cpp
+	float inline getPayRate();       
 	
 	void inline setHoursWorked(float _hours);
 	
-	float inline getHoursWorked();    // completed in person.cpp
+	float inline getHoursWorked();   
 	
 	float inline totalPay();
 	
